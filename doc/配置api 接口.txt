@@ -1,0 +1,94 @@
+添加member：
+POST: /v1/member
+消息内容：
+{
+	"iptype":"ipv4|ipv6",
+	"group":"17",
+	"hcheck":"0",
+	"address":"127.0.0.1",
+	"port":"90"
+}
+
+查询member：
+GET: /v1/member/{id}
+
+添加group
+POST: /v1/group
+消息内容：
+{
+    "name":"id",
+    "hcheck":"0"
+    "algorithm":"0"
+}
+
+
+add vserver：
+POST：/v1/vserver
+消息内容：
+{
+	"name":"test1",
+	"iptype":"ipv4",
+	"addr_start":"172.16.83.100",
+	"addr_end":"172.16.83.110",
+	"port_start":"100",
+	"port_end":"110",
+	"group":"10",
+	"service_type":"slb"
+}
+
+del vserver:
+DELETE: /v1/vserver/id/{id}
+        /v1/vserver/name/{name}
+消息内容：
+    NONE
+
+get vserver:
+GET:/v1/vserver/id/{id}
+    /v1/vserver/name/{name}
+消息内容：
+    NONE
+    
+add group
+POST: /v1/group
+消息内容:
+{
+	"name":"group1",
+	"hcheck":"0",
+	"algorithm":"0"
+}
+
+del group
+DELETE: /v1/group/id/{id}
+        /v1/group/name/{name}
+消息内容：
+     NONE
+     
+get group
+DELETE： ／v1/group/id/{id}
+         /v1/group/name/{name}
+消息内容：
+     NONE
+
+add group member
+POST: /v1/group
+消息内容：
+{
+	"iptype":"ipv4"
+	"hcheck":"0"
+	"port":"80"
+	"address":"192.168.13.4"
+	"group":"1"
+}
+
+del group member
+post: /v1/group/id/{id}
+      /v1/group/name/{name}
+消息内容：
+    NONE
+
+get group member
+post：/v1/group/id/{id}
+         /v1/group/name/{name}
+消息内容：
+     NONE
+
